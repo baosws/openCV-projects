@@ -4,11 +4,14 @@
 #include <map>
 #include "opencv2/highgui/highgui.hpp" // cần các hàm cv::imread, cv::imwrite, cv::imshow, cv::waitKey, cv::namedWindow
 #include "opencv2/imgproc/imgproc.hpp" // cần hàm cvtColor
+#ifdef BDBG
+#include "/home/duongbao/code-hub/logger.hpp"
+#endif
 
-#define CMD_HQGRAY    "hqgray" // mã lệnh cân bằng histogram ảnh xám
-#define CMD_HQRGB     "hqrgb"  // mã lệnh cân bằng histogram ảnh màu
-#define CMD_HQHSV     "hqhsv"  // mã lệnh cân bằng histogram kênh H của ảnh HSV
-#define CMD_SHOW_HELP "help"   // mã lệnh hiện hướng dẫn
+#define CMD_ROTATE    "rotate"
+#define CMD_ROTATE_N  "rotateN"
+#define CMD_SCALE     "scale"
+#define CMD_SHOW_HELP "help"    // mã lệnh hiện hướng dẫn
 
 typedef const cv::CommandLineParser& Params;
 
@@ -20,19 +23,6 @@ typedef const cv::CommandLineParser& Params;
 auto read_img(Params params) {
     // lấy đường dẫn file từ @params
     auto fname = params.get<std::string>("@path");
-
-    // đọc ảnh từ đường dẫn đó
-    return cv::imread(fname);
-}
-
-/**
- * hàm đọc ảnh thứ 2 (cho các thao tác cần 2 ảnh) từ param parser
- * @params: param parser
- * @return: ảnh đọc được từ thông tin của @params
- */
-auto read_img2(Params params) {
-    // lấy đường dẫn file từ @params
-    auto fname = params.get<std::string>("path2");
 
     // đọc ảnh từ đường dẫn đó
     return cv::imread(fname);
@@ -55,78 +45,67 @@ void show_help(Params params) {
 }
 
 /**
- * hàm cân bằng histogram ảnh xám lấy từ param parser
+ * hàm cân bằng histogram ảnh rgb lấy từ param parser
  * @param: param parser
  */
-void hqgray(Params param) {
+void rotate(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
-    // cân bằng histogram và lưu vào ảnh res
-    auto res = hqgray(img);
-    auto res_opencv = hqgray_opencv(img);
+    auto phi = param.get<double>("@arg1");
+
+    auto res = rotate(img, phi);
 
     // xuất ảnh đầu vào ra màn hình
     show_image(img, "input");
     // xuất ảnh kết quả ra màn hình
     show_image(res, "student's result");
-
-    // xuất ảnh kết quả sử dụng hàm của opencv
-    show_image(res_opencv, "opencv's result");
 }
 
 /**
  * hàm cân bằng histogram ảnh rgb lấy từ param parser
  * @param: param parser
  */
-void hqrgb(Params param) {
+void rotateN(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
-    // cân bằng histogram và lưu lại vào ảnh res
-    auto res = hqrgb(img);
+    auto phi = param.get<double>("@arg1");
 
-    // cân bằng histogram bằng opencv
-    auto res_opencv = hqrgb_opencv(img);
+    auto res = rotateN(img, phi);
 
     // xuất ảnh đầu vào ra màn hình
     show_image(img, "input");
     // xuất ảnh kết quả ra màn hình
     show_image(res, "student's result");
-
-    // xuất ảnh kết quả sử dụng hàm của opencv
-    show_image(res_opencv, "opencv's result");
 }
 
 /**
- * hàm cân bằng kênh H của ảnh HSV lấy từ param parser
+ * hàm cân bằng histogram ảnh rgb lấy từ param parser
  * @param: param parser
  */
-void hqhsv(Params param) {
+void scale(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
-    // cân bằng kênh H rồi lưu lại vào ảnh res
-    auto res = hqhsv(img);
-    auto res_opencv = hqhsv_opencv(img);
+    auto xscale = param.get<double>("@arg1");
+    auto yscale = param.get<double>("@arg2");
+
+    auto res = scale(img, xscale, yscale);
 
     // xuất ảnh đầu vào ra màn hình
     show_image(img, "input");
     // xuất ảnh kết quả ra màn hình
     show_image(res, "student's result");
-
-    // xuất ảnh kết quả sử dụng hàm của opencv
-    show_image(res_opencv, "opencv's result");
 }
-
 typedef void (*cmd_func)(const cv::CommandLineParser&);
 
 // bảng ánh xạ từ chuỗi mã lệnh tới hàm xử lý tương ứng dựa vào param parser
 std::map<std::string, cmd_func> commands =
 {
-    {CMD_HQGRAY, hqgray},      // lệnh cân bằng histogram ảnh xám
-    {CMD_HQRGB, hqrgb},        // lệnh cân bằng histogram ảnh màu trên cả 3 kênh R, G, B
-    {CMD_HQHSV, hqhsv},        // chuyển đổi ảnh màu từ hệ RBG sang hệ HSV, cân bằng trên kênh H, sau đó chuyển đổi ảnh ngược về hệ RGB để hiển thị
+    {CMD_ROTATE, rotate},
+    {CMD_ROTATE_N, rotateN},
+    {CMD_SCALE, scale},
     {CMD_SHOW_HELP, show_help}
 };
 
@@ -140,9 +119,11 @@ auto parseParams(int nargs, char* args[]) {
     // bảng định nghĩa các tham số mà chương trình có thể/cần xử lý
     const cv::String keys =
         "{@path                          |   | path to main image file}"
-        "{" CMD_HQGRAY                  "|   | equalize greyscale histogram}"
-        "{" CMD_HQRGB                   "|   | equalize RGB histogram}"
-        "{" CMD_HQHSV                   "|   | equalize HSV histogram}"
+        "{" CMD_ROTATE                  "|   | rotate image with preservation}"
+        "{" CMD_ROTATE_N                "|   | rotate image with out preservation}"
+        "{" CMD_SCALE                   "|   | scale image}"
+        "{@arg1                          |   | 'phi' for rotate command, or 'xscale' for scale command}"
+        "{@arg2                          |0  | 'yscale' for scale command}"
         "{" CMD_SHOW_HELP               "|   | show help}"
         ;
 
