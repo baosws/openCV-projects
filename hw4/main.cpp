@@ -8,9 +8,9 @@
 #include "/home/duongbao/code-hub/logger.hpp"
 #endif
 
-#define CMD_ROTATE    "rotate"
-#define CMD_ROTATE_N  "rotateN"
-#define CMD_SCALE     "scale"
+#define CMD_ROTATE    "rotate"  // mã lệnh xoay ảnh bảo toàn
+#define CMD_ROTATE_N  "rotateN" // mã lệnh xoay ảnh không bảo toàn
+#define CMD_SCALE     "scale"   // mã lệnh thay đổi kích thước ảnh
 #define CMD_SHOW_HELP "help"    // mã lệnh hiện hướng dẫn
 
 typedef const cv::CommandLineParser& Params;
@@ -35,6 +35,7 @@ auto read_img(Params params) {
  */
 void show_image(const cv::Mat& img, const std::string& win_name = "result") {
     cv::imshow(win_name, img);
+    cv::imwrite(win_name + ".png", img);
 }
 
 /** hàm hiện hướng dẫn sử dụng
@@ -45,15 +46,17 @@ void show_help(Params params) {
 }
 
 /**
- * hàm cân bằng histogram ảnh rgb lấy từ param parser
+ * hàm xoay ảnh bảo toàn từ param parser
  * @param: param parser
  */
 void rotate(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
-    auto phi = param.get<double>("@arg1");
+    // lấy tham số góc xoay phi, chuyển từ đơn vị độ sang radian
+    auto phi = param.get<double>("@arg1") * PI / 180;
 
+    // tính ảnh kết quả
     auto res = rotate(img, phi);
 
     // xuất ảnh đầu vào ra màn hình
@@ -63,15 +66,17 @@ void rotate(Params param) {
 }
 
 /**
- * hàm cân bằng histogram ảnh rgb lấy từ param parser
+ * hàm xoay ảnh không bảo toàn lấy từ param parser
  * @param: param parser
  */
 void rotateN(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
-    auto phi = param.get<double>("@arg1");
+    // lấy tham số góc xoay phi, chuyển từ đơn vị độ sang radian
+    auto phi = param.get<double>("@arg1") * PI / 180;
 
+    // tính ảnh kết quả
     auto res = rotateN(img, phi);
 
     // xuất ảnh đầu vào ra màn hình
@@ -81,16 +86,18 @@ void rotateN(Params param) {
 }
 
 /**
- * hàm cân bằng histogram ảnh rgb lấy từ param parser
+ * hàm thay đổi kích thước ảnh lấy từ param parser
  * @param: param parser
  */
 void scale(Params param) {
     // lấy ảnh từ param parser
     auto img = read_img(param);
 
+    // lấy tham số tỉ lệ thay đổi theo trục x và y
     auto xscale = param.get<double>("@arg1");
     auto yscale = param.get<double>("@arg2");
 
+    // tính ảnh kết quả
     auto res = scale(img, xscale, yscale);
 
     // xuất ảnh đầu vào ra màn hình
