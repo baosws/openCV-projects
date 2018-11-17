@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/duongbao/code-hub/logger.hpp
+bits/stdc++.h
+-
+cxxabi.h
+-
+
+/home/duongbao/openCV-projects/hw5/Source/algos.cpp
+algos.h
+/home/duongbao/openCV-projects/hw5/Source/algos.h
+cassert
+-
+opencv2/highgui/highgui.hpp
+/home/duongbao/openCV-projects/hw5/Source/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/duongbao/openCV-projects/hw5/Source/opencv2/imgproc/imgproc.hpp
+/home/duongbao/code-hub/logger.hpp
+-
+
+/home/duongbao/openCV-projects/hw5/Source/main.cpp
+string
+-
+iostream
+-
+algos.h
+/home/duongbao/openCV-projects/hw5/Source/algos.h
+map
+-
+opencv2/highgui/highgui.hpp
+/home/duongbao/openCV-projects/hw5/Source/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/duongbao/openCV-projects/hw5/Source/opencv2/imgproc/imgproc.hpp
+/home/duongbao/code-hub/logger.hpp
+-
+
+include/algos.h
+opencv2/core/core.hpp
+include/opencv2/core/core.hpp
+
