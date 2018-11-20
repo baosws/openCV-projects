@@ -81,40 +81,66 @@ CMakeFiles/hw5.dir/Source/main.cpp.o.provides: CMakeFiles/hw5.dir/Source/main.cp
 CMakeFiles/hw5.dir/Source/main.cpp.o.provides.build: CMakeFiles/hw5.dir/Source/main.cpp.o
 
 
-CMakeFiles/hw5.dir/Source/algos.cpp.o: CMakeFiles/hw5.dir/flags.make
-CMakeFiles/hw5.dir/Source/algos.cpp.o: Source/algos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duongbao/openCV-projects/hw5/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw5.dir/Source/algos.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw5.dir/Source/algos.cpp.o -c /home/duongbao/openCV-projects/hw5/Source/algos.cpp
+CMakeFiles/hw5.dir/Source/Filters.cpp.o: CMakeFiles/hw5.dir/flags.make
+CMakeFiles/hw5.dir/Source/Filters.cpp.o: Source/Filters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duongbao/openCV-projects/hw5/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw5.dir/Source/Filters.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw5.dir/Source/Filters.cpp.o -c /home/duongbao/openCV-projects/hw5/Source/Filters.cpp
 
-CMakeFiles/hw5.dir/Source/algos.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw5.dir/Source/algos.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/duongbao/openCV-projects/hw5/Source/algos.cpp > CMakeFiles/hw5.dir/Source/algos.cpp.i
+CMakeFiles/hw5.dir/Source/Filters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw5.dir/Source/Filters.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/duongbao/openCV-projects/hw5/Source/Filters.cpp > CMakeFiles/hw5.dir/Source/Filters.cpp.i
 
-CMakeFiles/hw5.dir/Source/algos.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw5.dir/Source/algos.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/duongbao/openCV-projects/hw5/Source/algos.cpp -o CMakeFiles/hw5.dir/Source/algos.cpp.s
+CMakeFiles/hw5.dir/Source/Filters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw5.dir/Source/Filters.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/duongbao/openCV-projects/hw5/Source/Filters.cpp -o CMakeFiles/hw5.dir/Source/Filters.cpp.s
 
-CMakeFiles/hw5.dir/Source/algos.cpp.o.requires:
+CMakeFiles/hw5.dir/Source/Filters.cpp.o.requires:
 
-.PHONY : CMakeFiles/hw5.dir/Source/algos.cpp.o.requires
+.PHONY : CMakeFiles/hw5.dir/Source/Filters.cpp.o.requires
 
-CMakeFiles/hw5.dir/Source/algos.cpp.o.provides: CMakeFiles/hw5.dir/Source/algos.cpp.o.requires
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/algos.cpp.o.provides.build
-.PHONY : CMakeFiles/hw5.dir/Source/algos.cpp.o.provides
+CMakeFiles/hw5.dir/Source/Filters.cpp.o.provides: CMakeFiles/hw5.dir/Source/Filters.cpp.o.requires
+	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/Filters.cpp.o.provides.build
+.PHONY : CMakeFiles/hw5.dir/Source/Filters.cpp.o.provides
 
-CMakeFiles/hw5.dir/Source/algos.cpp.o.provides.build: CMakeFiles/hw5.dir/Source/algos.cpp.o
+CMakeFiles/hw5.dir/Source/Filters.cpp.o.provides.build: CMakeFiles/hw5.dir/Source/Filters.cpp.o
+
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o: CMakeFiles/hw5.dir/flags.make
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o: Source/ScopedTimer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duongbao/openCV-projects/hw5/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o -c /home/duongbao/openCV-projects/hw5/Source/ScopedTimer.cpp
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/duongbao/openCV-projects/hw5/Source/ScopedTimer.cpp > CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.i
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/duongbao/openCV-projects/hw5/Source/ScopedTimer.cpp -o CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.s
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.requires:
+
+.PHONY : CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.requires
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.provides: CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.provides.build
+.PHONY : CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.provides
+
+CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.provides.build: CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o
 
 
 # Object files for target hw5
 hw5_OBJECTS = \
 "CMakeFiles/hw5.dir/Source/main.cpp.o" \
-"CMakeFiles/hw5.dir/Source/algos.cpp.o"
+"CMakeFiles/hw5.dir/Source/Filters.cpp.o" \
+"CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o"
 
 # External object files for target hw5
 hw5_EXTERNAL_OBJECTS =
 
 hw5: CMakeFiles/hw5.dir/Source/main.cpp.o
-hw5: CMakeFiles/hw5.dir/Source/algos.cpp.o
+hw5: CMakeFiles/hw5.dir/Source/Filters.cpp.o
+hw5: CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o
 hw5: CMakeFiles/hw5.dir/build.make
 hw5: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
 hw5: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
@@ -158,7 +184,7 @@ hw5: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
 hw5: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
 hw5: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
 hw5: CMakeFiles/hw5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duongbao/openCV-projects/hw5/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable hw5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duongbao/openCV-projects/hw5/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable hw5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hw5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -167,7 +193,8 @@ CMakeFiles/hw5.dir/build: hw5
 .PHONY : CMakeFiles/hw5.dir/build
 
 CMakeFiles/hw5.dir/requires: CMakeFiles/hw5.dir/Source/main.cpp.o.requires
-CMakeFiles/hw5.dir/requires: CMakeFiles/hw5.dir/Source/algos.cpp.o.requires
+CMakeFiles/hw5.dir/requires: CMakeFiles/hw5.dir/Source/Filters.cpp.o.requires
+CMakeFiles/hw5.dir/requires: CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o.requires
 
 .PHONY : CMakeFiles/hw5.dir/requires
 

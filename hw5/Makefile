@@ -111,44 +111,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hw5
+# Target rules for targets named 1612840_Lab04
 
 # Build rule for target.
-hw5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hw5
-.PHONY : hw5
+1612840_Lab04: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 1612840_Lab04
+.PHONY : 1612840_Lab04
 
 # fast build rule for target.
-hw5/fast:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/build
-.PHONY : hw5/fast
+1612840_Lab04/fast:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/build
+.PHONY : 1612840_Lab04/fast
 
-Source/algos.o: Source/algos.cpp.o
+Source/Filters.o: Source/Filters.cpp.o
 
-.PHONY : Source/algos.o
+.PHONY : Source/Filters.o
 
 # target to build an object file
-Source/algos.cpp.o:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/algos.cpp.o
-.PHONY : Source/algos.cpp.o
+Source/Filters.cpp.o:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/Filters.cpp.o
+.PHONY : Source/Filters.cpp.o
 
-Source/algos.i: Source/algos.cpp.i
+Source/Filters.i: Source/Filters.cpp.i
 
-.PHONY : Source/algos.i
+.PHONY : Source/Filters.i
 
 # target to preprocess a source file
-Source/algos.cpp.i:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/algos.cpp.i
-.PHONY : Source/algos.cpp.i
+Source/Filters.cpp.i:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/Filters.cpp.i
+.PHONY : Source/Filters.cpp.i
 
-Source/algos.s: Source/algos.cpp.s
+Source/Filters.s: Source/Filters.cpp.s
 
-.PHONY : Source/algos.s
+.PHONY : Source/Filters.s
 
 # target to generate assembly for a file
-Source/algos.cpp.s:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/algos.cpp.s
-.PHONY : Source/algos.cpp.s
+Source/Filters.cpp.s:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/Filters.cpp.s
+.PHONY : Source/Filters.cpp.s
+
+Source/ScopedTimer.o: Source/ScopedTimer.cpp.o
+
+.PHONY : Source/ScopedTimer.o
+
+# target to build an object file
+Source/ScopedTimer.cpp.o:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/ScopedTimer.cpp.o
+.PHONY : Source/ScopedTimer.cpp.o
+
+Source/ScopedTimer.i: Source/ScopedTimer.cpp.i
+
+.PHONY : Source/ScopedTimer.i
+
+# target to preprocess a source file
+Source/ScopedTimer.cpp.i:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/ScopedTimer.cpp.i
+.PHONY : Source/ScopedTimer.cpp.i
+
+Source/ScopedTimer.s: Source/ScopedTimer.cpp.s
+
+.PHONY : Source/ScopedTimer.s
+
+# target to generate assembly for a file
+Source/ScopedTimer.cpp.s:
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/ScopedTimer.cpp.s
+.PHONY : Source/ScopedTimer.cpp.s
 
 Source/main.o: Source/main.cpp.o
 
@@ -156,7 +183,7 @@ Source/main.o: Source/main.cpp.o
 
 # target to build an object file
 Source/main.cpp.o:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/main.cpp.o
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/main.cpp.o
 .PHONY : Source/main.cpp.o
 
 Source/main.i: Source/main.cpp.i
@@ -165,7 +192,7 @@ Source/main.i: Source/main.cpp.i
 
 # target to preprocess a source file
 Source/main.cpp.i:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/main.cpp.i
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/main.cpp.i
 .PHONY : Source/main.cpp.i
 
 Source/main.s: Source/main.cpp.s
@@ -174,7 +201,7 @@ Source/main.s: Source/main.cpp.s
 
 # target to generate assembly for a file
 Source/main.cpp.s:
-	$(MAKE) -f CMakeFiles/hw5.dir/build.make CMakeFiles/hw5.dir/Source/main.cpp.s
+	$(MAKE) -f CMakeFiles/1612840_Lab04.dir/build.make CMakeFiles/1612840_Lab04.dir/Source/main.cpp.s
 .PHONY : Source/main.cpp.s
 
 # Help Target
@@ -184,11 +211,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... hw5"
+	@echo "... 1612840_Lab04"
 	@echo "... edit_cache"
-	@echo "... Source/algos.o"
-	@echo "... Source/algos.i"
-	@echo "... Source/algos.s"
+	@echo "... Source/Filters.o"
+	@echo "... Source/Filters.i"
+	@echo "... Source/Filters.s"
+	@echo "... Source/ScopedTimer.o"
+	@echo "... Source/ScopedTimer.i"
+	@echo "... Source/ScopedTimer.s"
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"

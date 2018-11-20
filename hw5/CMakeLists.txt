@@ -7,10 +7,10 @@ include_directories(include)
 find_package( OpenCV REQUIRED )
 
 set(CMAKE_CXX_FLAGS "-std=c++17 -DBDBG -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs")
-set(SOURCES Source/main.cpp Source/algos.cpp)
+set(SOURCES Source/main.cpp Source/Filters.cpp Source/ScopedTimer.cpp)
 
 message("CXX flags: ${CMAKE_CXX_FLAGS}")
 
-add_executable(hw5 ${SOURCES})
+add_executable(1612840_Lab04 ${SOURCES})
 
-target_link_libraries(hw5 ${OpenCV_LIBS} )
+target_link_libraries(1612840_Lab04 ${OpenCV_LIBS})

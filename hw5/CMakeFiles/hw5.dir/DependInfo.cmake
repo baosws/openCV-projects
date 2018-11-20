@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/duongbao/openCV-projects/hw5/Source/algos.cpp" "/home/duongbao/openCV-projects/hw5/CMakeFiles/hw5.dir/Source/algos.cpp.o"
+  "/home/duongbao/openCV-projects/hw5/Source/Filters.cpp" "/home/duongbao/openCV-projects/hw5/CMakeFiles/hw5.dir/Source/Filters.cpp.o"
+  "/home/duongbao/openCV-projects/hw5/Source/ScopedTimer.cpp" "/home/duongbao/openCV-projects/hw5/CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o"
   "/home/duongbao/openCV-projects/hw5/Source/main.cpp" "/home/duongbao/openCV-projects/hw5/CMakeFiles/hw5.dir/Source/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hw5.dir/Source/main.cpp.o"
-  "CMakeFiles/hw5.dir/Source/algos.cpp.o"
+  "CMakeFiles/hw5.dir/Source/Filters.cpp.o"
+  "CMakeFiles/hw5.dir/Source/ScopedTimer.cpp.o"
   "hw5.pdb"
   "hw5"
 )
