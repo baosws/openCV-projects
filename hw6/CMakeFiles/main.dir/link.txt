@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++17 -DBDBG -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs -O3 -DNDEBUG  -rdynamic CMakeFiles/main.dir/Source/main.cpp.o  -o main 

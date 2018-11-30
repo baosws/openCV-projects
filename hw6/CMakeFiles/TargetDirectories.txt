@@ -1,0 +1,3 @@
+/home/duongbao/openCV-projects/hw6/CMakeFiles/rebuild_cache.dir
+/home/duongbao/openCV-projects/hw6/CMakeFiles/1612840_Lab05.dir
+/home/duongbao/openCV-projects/hw6/CMakeFiles/edit_cache.dir
